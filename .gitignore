@@ -1,0 +1,37 @@
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*-blx.aux
+*-blx.bib
+*.bcf
+*.run.xml
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.dvi
+*.ps
+*.ilg
+*.ind
+*.idx
+*.loe
+*.lol
+*.lox
+
+# Backup and swap files
+*~
+*.bak
+*.tmp
+*.swp
+
+# macOS metadata files
+.DS_Store
