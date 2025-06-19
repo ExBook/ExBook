@@ -1,6 +1,6 @@
 % 使用 ExBook 文档类，并传递选项
 \documentclass[standard]{ExBook} 
-
+\usepackage{etoolbox} % 新增
 
 \begin{document}
 
@@ -28,5 +28,14 @@
 \input{./2.2.tex}
 \subsection{线性表的链式表示}\qanswerloc{49}
 \input{./2.3.tex}
+
+% 确保最终为偶数页
+\AtEndDocument{%
+  \clearpage
+  \edef\lastpage{\getpagerefnumber{LastPage}}
+  \ifodd\lastpage
+    \null\thispagestyle{empty}\newpage
+  \fi
+}
 
 \end{document}
