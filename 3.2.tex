@@ -1,0 +1,39 @@
+\subsection{队列}\qanswerloc{87}
+
+\begin{qitems}
+
+    \begin{bbox}
+        \qitem 若希望循环队列中的元素都能得到利用，则需设置一个标志域 \texttt{tag}，并以 \texttt{tag} 的值为 0 或 1 来区分队首指针 \texttt{front} 和队尾指针 \texttt{rear} 相同时的队列状态是"空"还是"满"。试编写与此结构相应的入队和出队算法。
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem Q 是一个队列，S 是一个空栈，实现将队列中的元素逆置的算法。
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 利用两个栈 S1 和 S2 来模拟一个队列，已知栈的 4 个运算定义如下：
+        \begin{lstlisting}[language=C, basicstyle=\ttfamily\small]
+Push(S,x);        // 元素 x 入栈 S
+Pop(S,x);         // S 出栈并将出栈的值赋给 x
+StackEmpty(S);    // 判断栈是否为空
+StackOverflow(S); // 判断栈是否为满
+        \end{lstlisting}
+        如何利用栈的运算来实现该队列的 3 个运算 (形参由读者根据要求自己设计)？
+        \begin{lstlisting}[language=C, basicstyle=\ttfamily\small]
+Enqueue(x);       // 将元素 x 入队
+Dequeue(x);       // 出队，并将出队元素存储在 x 中
+QueueEmpty();     // 判断队列是否为空
+        \end{lstlisting}
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 【2019 统考真题】请设计一个队列，要求满足：1.初始时队列为空；2.入队时，允许增加队列占用空间；3.出队后，出队元素所占用的空间可重复使用，即整个队列所占用的空间只增不减；4.入队操作和出队操作的时间复杂度始终保持为 O(1)。请回答：
+        \begin{subqitems}
+            \subqitem 该队列是应选择链式存储结构，还是应选择顺序存储结构？
+            \subqitem 画出队列的初始状态，并给出判断队空和队满的条件。
+            \subqitem 画出第一个元素入队后的队列状态。
+            \subqitem 给出入队操作和出队操作的基本过程。
+        \end{subqitems}
+    \end{bbox}
+
+\end{qitems} 
