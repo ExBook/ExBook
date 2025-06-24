@@ -1,6 +1,7 @@
 % 使用 ExBook 文档类，并传递选项
 \documentclass[standard]{ExBook} 
 \usepackage{etoolbox} % 新增
+\usepackage{forest}
 
 \begin{document}
 
@@ -25,19 +26,20 @@
 \section{线性表}
 \setcounter{subsection}{1}
 \input{./2.2.tex}
-\clearpage
-
 \input{./2.3.tex}
-\clearpage
 
+\setcounter{section}{2} 
 \section{栈、队列和数组}
-
 \input{./3.1.tex}
-\clearpage
-
 \input{./3.2.tex}
-\clearpage
 
+\setcounter{section}{4} 
+\section{树与二叉树}
+\input{./5.1.tex}
+\input{./5.2.tex}
+\input{./5.3.tex}
+\input{./5.4.tex}
+\input{./5.5.tex}
 
 % 确保最终为偶数页
 \AtEndDocument{%

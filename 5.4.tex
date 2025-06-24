@@ -1,0 +1,60 @@
+\subsection{树、森林}\qanswerloc{181}
+
+\begin{qitems}
+    \begin{bbox}
+        \qitem 给定一棵树的先根遍历序列和后根遍历序列，能否唯一确定一棵树？若能，请举例说明；若不能，请给出反例。
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 将下面一个由 3 棵树组成的森林转换为二叉树。
+        \begin{center}
+            \begin{forest}
+                for tree={circle, draw, l=1.5cm},
+                [A,
+                    [B]
+                    [C]
+                ]
+            \end{forest}
+            \hspace{1cm}
+            \begin{forest}
+                for tree={circle, draw},
+                [D,
+                    [E,
+                        [F]
+                    ]
+                ]
+            \end{forest}
+            \hspace{1cm}
+            \begin{forest}
+                for tree={circle, draw, l=1.5cm},
+                [G,
+                    [H,
+                        [K]
+                        [L]
+                    ]
+                    [I]
+                    [J,
+                        [M,
+                            [P]
+                        ]
+                        [N]
+                        [O]
+                    ]
+                ]
+            \end{forest}
+        \end{center}
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 已知某二叉树的先序序列和中序序列分别为 \texttt{ABDEHCFIMGJKL} 和 \texttt{DBHEAIMFGCKLJ}，请画出这棵二叉树，并画出二叉树对应的森林。
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 编程求以孩子兄弟表示法存储的森林的叶结点数。
+    \end{bbox}
+
+    \begin{bbox}
+        \qitem 以孩子兄弟链表为存储结构，请设计递归算法求树的深度。
+    \end{bbox}
+
+\end{qitems} 
