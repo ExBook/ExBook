@@ -42,6 +42,10 @@
 \newif\if@showmark  \@showmarkfalse
 \DeclareOption{showmark}{\@showmarktrue}
 
+% 是否显示题目答案
+\newif\if@enableanswer  \@enableanswerfalse
+\DeclareOption{enableAnswer}{\@enableanswertrue}
+
 % 定义默认页面格式
 \def\@pageformat{standard}
 \newcommand{\myPageFormat}{1}
@@ -219,11 +223,11 @@
 \def\ExBook@value@TitleDescription{\textbf{此处填写副标题}}
 \def\ExBook@value@TypeOne{\textbf{A4紧凑版}}
 \def\ExBook@value@TypeTwo{\textbf{A4标准版}}
-\def\ExBoo(k)value@TypeThree{\textbf{横版Pad版}}
+\def\ExBook@value@TypeThree{\textbf{横版Pad版}}
 \def\ExBook@value@TypeFour{\textbf{A4宽松版}}
 \def\ExBook@value@TypeFive{\textbf{A4单题版}}
 \def\ExBook@value@TypeSix{\textbf{竖版Pad版}}
-\def\ExBook@value@motto{\kaishu “心无旁骛，行稳致远。”}
+\def\ExBook@value@motto{\kaishu "心无旁骛，行稳致远。"}
 \def\ExBook@value@Creator{\textbf{研小布}}
 \def\ExBook@value@UpdateTime{\textbf{最后更新时间：\today}}
 
@@ -245,7 +249,7 @@
 \newcommand\TypeFour[1]{\def\ExBook@value@TypeFour{\textbf{#1}}}
 \newcommand\TypeFive[1]{\def\ExBook@value@TypeFive{\textbf{#1}}}
 \newcommand\TypeSix[1]{\def\ExBook@value@TypeSix{\textbf{#1}}}
-\newcommand\motto[1]{\def\ExBook@value@motto{\kaishu “#1”}}
+\newcommand\motto[1]{\def\ExBook@value@motto{\kaishu "#1"}}
 \newcommand\Creator[1]{\def\ExBook@value@Creator{\textbf{#1}}}
 \newcommand\UpdateTime[1]{\def\ExBook@value@UpdateTime{\textbf{最后更新时间：#1}}}
 \newcommand\Lhead[1]{\def\ExBook@value@Lhead{\textbf{#1}}}
@@ -268,6 +272,27 @@
 \newcommand{\blankline}{\underline{\hspace{3em}}} % 空白下划线
 \newcommand{\noreftitle}[1]{\par \textbf{#1} \par} % 无索引标题
 \newcommand{\onlinecheckurl}{\ExBook@value@onlineCheckUrl} % 空白下划线
+
+% 答案显示相关命令
+\newcommand{\answer}[1]{
+    \if@enableanswer
+        \par\vspace{0.5em}
+        \textcolor{themeColor}{\textbf{答案：}} #1
+        \par\vspace{0.5em}
+    \fi
+}
+
+\newcommand{\answerbox}[1]{
+    \if@enableanswer
+        \par\vspace{0.5em}
+        \fcolorbox{themeColor}{themeColor!10}{
+            \begin{minipage}{0.95\linewidth}
+                \textcolor{themeColor}{\textbf{答案：}} #1
+            \end{minipage}
+        }
+        \par\vspace{0.5em}
+    \fi
+}
 
 % 定义一个只隐藏当前页的页眉和页脚的命令
 \newcommand{\hideheaderfooter}{
