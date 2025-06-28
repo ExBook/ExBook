@@ -1,0 +1,119 @@
+\subsection{图的应用}\qanswerloc{259}
+\begin{qitems}
+    \begin{bbox}
+        \qitem 下面是一种称为"破圈法"的求解最小生成树的方法：所谓"破圈法"，是指"任取一圈，去掉圈上权最大的边"，反复执行这一步骤，直到没有圈为止。试判断这种方法是否正确。若正确，说明理由；若不正确，举出反例（注：圈就是回路）。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 已知有向图如下图所示。
+        \imgin[0.7]{}{fig/fig6.4.2.png}
+        \begin{subqitems}
+            \subqitem 写出该图的邻接矩阵表示并据此给出从顶点 1 出发的深度优先遍历序列。
+            \subqitem 求该有向图的强连通分量的数目。
+            \subqitem 给出该图的任意两个拓扑序列。
+            \subqitem 若将该图视为无向图，分别用 Prim 算法和 Kruskal 算法求最小生成树。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 对下图所示的无向图，按照 Dijkstra 算法，写出从顶点 1 到其他各个顶点的最短路径和最短路径长度（顺序不能颠倒）。
+        \imgin[0.8]{}{fig/fig6.4.3.png}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 下图所示为一个用 AOE 网表示的工程。
+        \imgin[0.6]{}{fig/fig6.4.4.png}
+        \begin{subqitems}
+            \subqitem 画出此图的邻接表表示。
+            \subqitem 完成此工程至少需要多少时间？
+            \subqitem 指出关键路径。
+            \subqitem 哪些活动加速可以缩短完成工程所需的时间？
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 下表给出了某工程各工序之间的优先关系和各工序所需的时间（其中"—"表示无先驱工序），请完成以下各题：
+        \begin{center}
+        \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+        \hline
+        工序代号 & A & B & C & D & E & F & G & H \\
+        \hline
+        所需时间 & 3 & 2 & 2 & 3 & 4 & 3 & 2 & 1 \\
+        \hline
+        先驱工序 & --- & --- & A & A & B & A & C, E & D \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \begin{subqitems}
+            \subqitem 画出相应的 AOE 网。
+            \subqitem 列出各事件的最早发生时间和最迟发生时间。
+            \subqitem 求出关键路径并指明完成该工程所需的最短时间。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 试编写利用 DFS 实现有向无环图拓扑排序的算法。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2009 统考真题】带权图（权值非负，表示边连接的两顶点间的距离）的最短路径问题是找出从初始顶点到目标顶点之间的一条最短路径。假设从初始顶点到目标顶点之间存在路径，现有一种解决该问题的方法：\\
+        \ding{172} 设最短路径初始时仅包含初始顶点，令当前顶点 $u$ 为初始顶点。\\
+        \ding{173} 选择离 $u$ 最近且尚未在最短路径中的一个顶点 $v$，加入最短路径，修改当前顶点 $u=v$。\\
+        \ding{174} 重复步骤\ding{173}，直到 $u$ 是目标顶点时为止。\\
+        请问上述方法能否求得最短路径？若该方法可行，请证明；否则，请举例说明。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2011 统考真题】已知有 6 个顶点（顶点编号为 0$\sim$5）的有向带权图 G，其邻接矩阵 A 为上三角矩阵，按行为主序（行优先）保存在如下的一维数组中。
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        4 & 6 & $\infty$ & $\infty$ & $\infty$ & 5 & $\infty$ & $\infty$ & $\infty$ & 4 & 3 & $\infty$ & $\infty$ & 3 & 3 \\
+        \hline
+        \end{tabular}
+        \end{center}
+        要求：
+        \begin{subqitems}
+            \subqitem 写出图 G 的邻接矩阵 A。
+            \subqitem 画出有向带权图 G。
+            \subqitem 求图 G 的关键路径，并计算该关键路径的长度。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2014 统考真题】某网络中的路由器运行 OSPF 路由协议，下表是由路由器 R1 维护的主要链路状态信息（LSI），R1 构造的网络拓扑图（见下图）是根据题下表及 R1 的接口名构造出来的网络拓扑。
+        \imgin[0.6]{}{fig/fig6.4.10.png}
+        请回答下列问题。
+        \begin{subqitems}
+            \subqitem 本题中的网络可抽象为数据结构中的哪种逻辑结构？
+            \subqitem 针对表中的内容，设计合理的链式存储结构，以保存表中的链路状态信息（LSI）。要求给出链式存储结构的数据类型定义，并画出对应表的链式存储结构示意图（示意图中可以仅以 ID 标识结点）。
+            \subqitem 按照 Dijkstra 算法的策略，依次给出 R1 到达子网 192.1.x.x 的最短路径及费用。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2017 统考真题】使用 Prim 算法求带权连通图的最小（代价）生成树（MST）。请回答下列问题：
+        \imgin[0.7]{}{fig/fig6.4.11.png}
+        \begin{subqitems}
+            \subqitem 对下列图 G，从顶点 A 开始求 G 的 MST，依次给出按算法选出的边。
+            \subqitem 图 G 的 MST 是唯一的吗？
+            \subqitem 对任意的带权连通图，满足什么条件时，其 MST 是唯一的？
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2018 统考真题】拟建设一个光通信骨干网络连通 BJ、CS、XA、QD、JN、NJ、TL 和 WH 等 8 个城市，下图中无向边上的权值表示两个城市之间备选光缆的铺设费用。
+        \imgin[0.7]{}{fig/fig6.4.12.png}
+        请回答下列问题：
+        \begin{subqitems}
+            \subqitem 仅从铺设费用角度出发，给出所有可能的最经济的光缆铺设方案（用带权图表示），并计算相应方案的总费用。
+            \subqitem 该图可采用图的哪种存储结构？给出求解问题 1）所用的算法名称。
+            \subqitem 假设每个城市采用一个路由器按 1）中得到的最经济方案组网，主机 H1 直接连接 TL 的路由器，主机 H2 直接连接 BJ 的路由器。若 H1 向 H2 发送一个 TTL = 5 的 IP 分组，则 H2 是否可以收到该 IP 分组？
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2024 统考真题】2023 年 10 月 26 日，神舟十七号载人飞船发射取得圆满成功，再次彰显了中国航天事业的辉煌成就。载人航天工程是包含众多子工程的复杂系统工程，为了保证工程的有序开展，需要明确各子工程的前导子工程，以协调各子工程的实施。该问题可以简化、抽象为有向图的拓扑序列问题。已知有向图 G 采用邻接矩阵存储，类型定义如下。
+        \begin{lstlisting}[language=C, basicstyle=\ttfamily\small]
+typedef struct {                //图的类型定义
+    int numVertices, numEdges;  //图的顶点数和有向边数
+    char VerticesList[MAXV];    //顶点表, MAXV为已定义常量
+    int Edge[MAXV][MAXV];       //邻接矩阵
+} MGraph;
+        \end{lstlisting}
+        请设计算法：\lstinline{int uniquely(MGraph G)}，判定 G 是否存在唯一的拓扑序列，若是，则返回 1，否则返回 0。要求如下。
+        \begin{subqitems}
+            \subqitem 给出算法的基本设计思想。
+            \subqitem 根据设计思想，采用 C 或 C++语言描述算法，关键之处给出注释。
+        \end{subqitems}
+    \end{bbox}
+\end{qitems} 
