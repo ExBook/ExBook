@@ -101,6 +101,10 @@
 \RequirePackage{xkeyval}
 \RequirePackage{pgfmath} % 导入随机数生成包
 \RequirePackage{truncate}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{breakable} % 允许 tcolorbox 跨页
+\tcbuselibrary{skins}
+\RequirePackage{environ}
 
 \usetikzlibrary{fadings}
 \usetikzlibrary{shapes, positioning}
@@ -274,24 +278,47 @@
 \newcommand{\onlinecheckurl}{\ExBook@value@onlineCheckUrl} % 空白下划线
 
 % 答案显示相关命令
-\newcommand{\answer}[1]{
+\NewEnviron{solution}{%
+    \makeatletter
     \if@enableanswer
-        \par\vspace{0.5em}
-        \textcolor{themeColor}{\textbf{答案：}} #1
-        \par\vspace{0.5em}
+        \par\medskip\noindent
+        \if@darkmode
+            \begin{tcolorbox}[
+                breakable,
+                boxrule=0.5pt,
+                arc=2mm,
+                boxsep=4pt,
+                left=2pt,
+                right=2pt,
+                colback=bg!60!black,
+                colframe=themeColor,
+                title={\heiti\bfseries 解答},
+                fonttitle=\bfseries,
+                colbacktitle=themeColor,
+                coltitle=white
+            ]
+            \BODY
+            \end{tcolorbox}
+        \else
+            \begin{tcolorbox}[
+                breakable,
+                boxrule=0.5pt,
+                arc=2mm,
+                boxsep=4pt,
+                left=2pt,
+                right=2pt,
+                colback=themeColor!5!white,
+                colframe=themeColor,
+                title={\heiti\bfseries 解答},
+                fonttitle=\bfseries,
+                colbacktitle=themeColor,
+                coltitle=white
+            ]
+            \BODY
+            \end{tcolorbox}
+        \fi
     \fi
-}
-
-\newcommand{\answerbox}[1]{
-    \if@enableanswer
-        \par\vspace{0.5em}
-        \fcolorbox{themeColor}{themeColor!10}{
-            \begin{minipage}{0.95\linewidth}
-                \textcolor{themeColor}{\textbf{答案：}} #1
-            \end{minipage}
-        }
-        \par\vspace{0.5em}
-    \fi
+    \makeatother
 }
 
 % 定义一个只隐藏当前页的页眉和页脚的命令
