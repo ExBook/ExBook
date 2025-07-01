@@ -1,0 +1,74 @@
+\subsection{散列表}\qanswerloc{333}
+
+\begin{qitems}
+    \begin{bbox}
+        \qitem 若要在散列表中删除一个记录，应如何操作？为什么？按照处理冲突的方法为开放地址法和拉链法分别说明。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 假定把关键字 \lstinline{key} 散列到有 $n$ 个表项 (从 0 到 $n-1$ 编址) 的散列表中。
+        对于下面的每个函数 \lstinline{H(key)} (\lstinline{key} 为整数)，这些函数能够当作散列函数吗？
+        若能，它是一个好的散列函数吗？说明理由。
+        设函数 \lstinline{random(n)} 返回一个 0 到 $n-1$ 之间的随机整数 (包括 0 与 $n-1$ 在内)。
+        \begin{subqitems}
+            \subqitem \lstinline{H(key) = key / n.}
+            \subqitem \lstinline{H(key) = 1.}
+            \subqitem \lstinline{H(key) = (key + random(n)) \% n.}
+            \subqitem \lstinline{H(key) = key \% p(n)}; 其中 \lstinline{p(n)} 是不大于 $n$ 的最大素数。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 使用散列函数 \lstinline{H(key) = key \% 11}，把一个整数值转换成散列表下标，
+        散列表的长度为 11，现在要把数据 \{1, 13, 12, 34, 38, 33, 27, 22\} 依次插入散列表。
+        \begin{subqitems}
+            \subqitem 使用线性探测法来构造散列表。
+            \subqitem 使用链地址法构造散列表。
+        \end{subqitems}
+        试针对这两种情况，分别确定查找成功所需的平均查找长度，及查找不成功所需的平均查找长度。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 已知一组关键字为 \{26, 36, 41, 38, 44, 15, 68, 12, 6, 51, 25\}，
+        用链地址法解决冲突，假设装填因子 $\alpha = 0.73$，
+        散列函数的形式为 \lstinline{H(key) = key \% P}, \lstinline{P} 为不大于表长的最大素数，
+        请回答以下问题：
+        \begin{subqitems}
+            \subqitem 构造出散列函数。
+            \subqitem 分别计算出等概率情况下查找成功和查找失败的平均查找长度 
+            (查找失败的计算中只将与关键字的比较次数计算在内即可)。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 设散列表为 \lstinline{HT[0...12]}，即表的大小为 $m=13$。
+        现采用双散列法解决冲突，散列函数和再散列函数分别为：
+        \[ H_0(key) = key \% 13 \quad \text{注: \% 是取模运算 (=mod)} \]
+        \[ H_i = (H_{i-1} + \text{REV}(\text{key}+1) \% 11 + 1) \% 13; \quad i = 1, 2, 3, \dots, m-1 \]
+        其中，函数 \lstinline{REV(x)} 表示颠倒十进制数 \lstinline{x} 的各位，
+        如 \lstinline{REV(37)=73, REV(7)=7} 等。
+        若插入的关键字序列为 (2, 8, 31, 20, 19, 18, 53, 27)，请回答：
+        \begin{subqitems}
+            \subqitem 画出插入这 8 个关键字后的散列表。
+            \subqitem 计算查找成功的平均查找长度 ASL。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2010 统考真题】将关键字序列 (7, 8, 30, 11, 18, 9, 14) 散列存储到散列表中。
+        散列表的存储空间是一个下标从 0 开始的一维数组，散列函数为 \lstinline{H(key) = (key * 3) mod 7}，
+        处理冲突采用线性探测再散列法，要求装填 (载) 因子为 0.7。
+        \begin{subqitems}
+            \subqitem 请画出所构造的散列表。
+            \subqitem 分别计算等概率情况下，查找成功和查找不成功的平均查找长度。
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2024 统考真题】将关键字序列 20, 3, 11, 18, 9, 14, 7 依次存储到初始为空、长度为 11 的散列表 HT 中，
+        散列函数 $H(key) = (key * 3) \% 11$。
+        $H(key)$ 计算出的初始散列地址为 $H_0$，
+        发生冲突时探查地址序列是 $H_1, H_2, H_3, \dots$，
+        其中 $H_k = (H_0 + k^2) \% 11, k=1, 2, 3, \dots$。
+        请回答下列问题：
+        \begin{subqitems}
+            \subqitem 画出所构造的 HT，并计算 HT 的装填因子。
+            \subqitem 给出在 HT 中查找关键字 14 的关键字比较序列。
+            \subqitem 在 HT 中查找关键字 8，确认查找失败时的散列地址是多少？
+        \end{subqitems}
+    \end{bbox}
+\end{qitems} 

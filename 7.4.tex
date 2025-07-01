@@ -1,0 +1,38 @@
+\subsection{B树和B+树}\qanswerloc{321}
+
+\begin{qitems}
+    \begin{bbox}
+        \qitem 给定一组关键字 \{20, 30, 50, 52, 60, 68, 70\}，给出创建一棵 3 阶 B 树的过程。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 对如下图所示的 3 阶 B 树，依次执行下列操作，画出各步操作的结果。
+        \begin{center}
+            \begin{tikzpicture}[level distance=2cm,
+                level 1/.style={draw, rectangle, sibling distance=4cm, inner sep=5pt},
+                level 2/.style={draw, rectangle, sibling distance=2cm, inner sep=5pt}]
+                \node {50}
+                    child { node {30}
+                        child { node {8, 20} }
+                        child { node {35, 40} }
+                    }
+                    child { node {80}
+                        child { node {60} }
+                        child { node {100} }
+                    };
+            \end{tikzpicture}
+        \end{center}
+        \begin{subqitems}
+            \subqitem 插入 90
+            \subqitem 插入 25
+            \subqitem 插入 45
+            \subqitem 删除 60
+            \subqitem 删除 80
+        \end{subqitems}
+    \end{bbox}
+    \begin{bbox}
+        \qitem 利用 B 树做文件索引时，若假设磁盘页块的大小是 4000B (实际应是 2 的次幂，此处是为了计算方便)，
+        指示磁盘地址的指针需要 5B。现有 20000000 个记录构成的文件，每个记录为 200B，其中包括关键字 5B。
+        试问在这个采用 B 树作索引的文件中，B 树的阶数应为多少？
+        假定文件数据部分未按关键字有序排列，则索引部分需要占用多少磁盘页块？
+    \end{bbox}
+\end{qitems} 
