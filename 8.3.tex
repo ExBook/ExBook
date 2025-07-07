@@ -1,0 +1,28 @@
+\subsection{交换排序}\qanswerloc{355}
+
+\begin{qitems}
+    \begin{bbox}
+        \qitem 已知线性表按顺序存储，且每个元素都是不相同的整数型元素，
+        设计把所有奇数移动到所有偶数前边的算法（要求时间最短，辅助空间最小）。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 试编写一个算法，使之能够在数组 \lstinline{L[1...n]} 中找出第 $k$ 小的元素
+        （从小到大排序后处于第 $k$ 个位置的元素）。
+    \end{bbox}
+    \begin{bbox}
+        \qitem 荷兰国旗问题：设有一个仅由红、白、蓝三种颜色的条块组成的条块序列，
+        存储在一个顺序表中，请编写一个时间复杂度为 $O(n)$ 的算法，使得这些条块按红、白、蓝的顺序排好，
+        即排成荷兰国旗图案。请完成算法实现：
+        \quad \lstinline|typedef enum{RED, WHITE, BLUE} color; //设置枚举数组|
+        
+        \quad \lstinline|void Flag_Arrange(color a[],int n) { ... }|
+    \end{bbox}
+    \begin{bbox}
+        \qitem 【2016 统考真题】已知由 $n$ ($n \ge 2$) 个正整数构成的集合 $A=\{a_k | 0 \le k < n\}$，将其划分为两个不相交的子集 $A_1$ 和 $A_2$，元素个数分别是 $n_1$ 和 $n_2$，$A_1$ 和 $A_2$ 中的元素之和分别为 $S_1$ 和 $S_2$。设计一个尽可能高效的划分算法，满足 $|n_1-n_2|$ 最小且 $|S_1-S_2|$ 最大。要求：
+        \begin{subqitems}
+            \subqitem 给出算法的基本设计思想。
+            \subqitem 根据设计思想，采用 C 或 C++语言描述算法，关键之处给出注释。
+            \subqitem 说明所设计算法的平均时间复杂度和空间复杂度。
+        \end{subqitems}
+    \end{bbox}
+\end{qitems} 
