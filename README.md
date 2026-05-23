@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ExBook/ExBook/main/logo.png" alt="ExBook" height="80">
+  <img src="https://raw.githubusercontent.com/ExBook/ExBook/main/logo-header.png" alt="ExBook" width="600">
 </div>
 
 <h3 align="center">一套面向中文考研场景的 LaTeX 文档类系列</h3>
