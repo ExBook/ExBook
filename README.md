@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/ExBook/ExBook/main/logo-header.png" alt="ExBook" width="600">
 </div>
 
-<h3 align="center">一套面向中文考研场景的 LaTeX 文档类系列</h3>
+<h3 align="center">一套面向中文考试教育场景的 LaTeX 文档类系列</h3>
 
 <p align="center">
   <a href="https://exbook.github.io/">官方网站</a>
@@ -16,7 +16,7 @@
   </a>
 </div>
 
-**考研刷题册** — 一次录入题目，自动生成 6 种版式（A4 紧凑/标准/宽松/单题 + 横竖 Pad 版）。选择题自动排版、12 色主题、TikZ 封面、水印、深色模式。支持完整习题系统。
+**考试刷题册** — 一次录入题目，自动生成 6 种版式（A4 紧凑/标准/宽松/单题 + 横竖 Pad 版）。选择题自动排版、12 色主题、TikZ 封面、水印、深色模式。支持完整习题系统。
 
 [:arrow_forward: 查看项目](https://github.com/ExBook/ExBookie)
 
@@ -28,7 +28,7 @@
   </a>
 </div>
 
-**英语手译本** — 专为考研英语阅读理解翻译练习设计。自动测量句子长度生成翻译横线，右侧词汇手记区，参考译文环境（一键显隐），稿纸手写风格封面。
+**英语手译本** — 专为英语阅读理解翻译练习设计。自动测量句子长度生成翻译横线，右侧词汇手记区，参考译文环境（一键显隐），稿纸手写风格封面。
 
 [:arrow_forward: 查看项目](https://github.com/ExBook/TransBook)
 
